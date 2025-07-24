@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    body{
+
+        padding: 0px 300px;
+    }
+    .container{
+        width: 100%;
+        height: auto;
+    }
+    .navbar{
+        width: 100%;
+        height: 10vh;
+        display: flex;
+    }
+    .col{
+        width: 100%;
+        height: 10vh;
+        margin: 1px;
+    }
+    .col h3{
+        font-size: 30px;
+        padding: 15px;
+        width: 30%;
+    }
+    ul{
+        justify-content: space-evenly;
+        display: flex;
+        padding: 20px;
+        font-size: 20px;
+        gap: 15px;
+    }
+    li{
+        list-style: none;
+    }
+    select{
+        font-size: 18px;
+        border: none;
+    }
+    .box{
+        width: 100%;
+        height: 85vh;
+        display: flex;
+    }
+    .row{
+        width: 100%;
+        height: 70vh;
+        padding: 50px 0px;
+    }
+    #rw{
+        padding: 120px 0px;
+        width: 60%;
+    }
+    #rw button{
+        width: 120px;
+        height: 4vh;
+        border-radius: 20px;
+        border: none;
+        background-color: rgb(3, 201, 3);
+        color: white;
+    }
+    .bigger{
+        width: 100%;
+        height: 75vh;
+        display: flex;
+        background-color: rgb(235, 235, 235);
+    }
+    .card{
+        width: 100%;
+        height: 70vh;
+    }
+    #st{
+        padding: 120px 50px;
+        width: 110%;
+    }
+    #st button{
+        width: 120px;
+        height: 4vh;
+        border-radius: 20px;
+        border: none;
+        background-color: rgb(3, 201, 3);
+        color: white;
+    }
+    .katta{
+        width: 100%;
+        height: 30vh;
+        display: flex;
+    }
+    .bir{
+        width: 100%;
+        height: 30vh;
+        padding: 60px 50px;
+    }
+    .asos{
+        width: 100%;
+        height: auto;
+        display: flex;
+        background-color: rgb(242, 242, 242);
+    }
+    .ikki{
+        width: 100%;
+        height: auto;
+        padding: 50px 0px;
+    }
+    #ts{
+        padding: 180px 50px;
+        height: auto;
+    }
+    .uch{
+        gap: 75px;
+    }
+    #s{
+        border: 2px solid green;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        width: 20px;
+        justify-content: space-evenly;
+        text-align: center;
+    }
+    .primary{
+        width: 100%;
+        height: auto;
+        display: flex;
+    }
+    .see h3{
+        text-align: center;
+    }
+    .see h1{
+        text-align: center;
+    }
+    .see img{
+        width: 100%;
+        border-radius: 10px;
+    }
+    .home{
+        width: 100%;
+        height: auto;
+        display: flex;
+    }
+    .head{
+        width: 0%;
+        margin: 1px;
+        padding: 100px 0px;
+    }
+    #t{
+        width: 50%;
+        padding: 100px 8px;
+    }
+    .s{
+        height: 15vh;
+        border: 1px solid white;
+        padding: 0px 15px;
+        background-color: rgb(241, 241, 241);
+    }
+    .tartib{
+        width: 100%;
+        height: auto;
+        display: flex;
+    }
+    #A{
+        width: 100%;
+        padding: 50px 0px;
+    }
+    #A button{
+        width: 120px;
+        height: 4vh;
+        border-radius: 20px;
+        border: rgb(3, 201, 3);
+        background-color: rgb(3, 201, 3);
+        color: white;
+    }
+    .dell{
+        margin: 1px;
+        width: 90%;
+    }
+    .dell img{
+        padding: 20px 10px 20px 10px;
+    }
+    .sss{
+        height: 20vh;
+        padding: 45px 0px;
+    }
+    .bigdiv{
+        width: 100%;
+        height: 70vh;
+        display: flex;;
+        padding: 10px 0px;
+    }
+    .css{
+        height: 65vh;
+        background-color: rgb(227, 227, 227);
+        margin: 8px;
+        border-radius: 10px;
+    }
+    .small{
+        width: 100%;
+        height: 50vh;
+        padding: 100px 0px;
+    }
+    
+    .bottom{
+        width: 100%;
+        height: 33vh;
+        background-color: rgba(201, 201, 201, 0.9);
+        padding: 15px 30px;
+    }
+    .bottom h3{
+        text-align: center;
+        font-size: 15px;
+        font-family: sans-serif;
+    }
+    .bottom h1{
+        text-align: center;
+        font-size: 25px;
+        font-family: sans-serif;
+    }
+    .bottom p{
+        font-size: 18px;
+    }
+    .footer{
+        width: 100%;
+        height: 30vh;
+        display: flex;
+    }
+    .foot{
+        margin: 31px;
+    }
+    @media screen and (max-width:1724px) {
+        body{
+            padding: 0px 200px;
+        }
+    }
+    @media screen and (max-width:1520px) {
+        body{
+            padding: 0px 150px;
+        }
+    }
+    @media screen and (max-width:1395px) {
+        body{
+            padding: 0px 100px;
+        }
+    }
+    @media screen and (max-width:1320px) {
+        body{
+            padding: 0px 50px;
+        }
+    }
+    @media screen and (max-width:1270px) {
+        body{
+            padding: 0px 20px;
+        }
+    }
+    @media screen and (max-width:1170px) {
+        body{
+            padding: 0px 20px;
+        }
+        .navbar{
+            height: 40vh;
+            background-color: white;
+            display: block;
+        }
+        .col h3{
+            text-align: center;
+            width: 100%;
+        }
+        ul{
+            display: block;
+            text-align: center;
+        }
+        li{
+            margin: 7px;
+        }
+        .box{
+            height: 100vh;
+            display: block;
+        }
+        #rw{
+            text-align: center;
+            width: 100%;
+            height: 30vh;
+        }
+        .bigger{
+            height: 125vh;
+            display: block;
+        }
+        #st{
+            text-align: center;
+            width: 100%;
+            height: 40vh;
+            padding: -150px 0px;
+        }
+        .card{
+            padding: 60px 0px;
+            display: block;
+        }
+        .katta{
+            height: auto;
+            display: block;
+        } 
+        .bir{
+            padding: 50px 0px;
+            display: block;
+        }
+        .asos{
+            height: auto;
+            display: block;
+        }
+        #ts{
+            text-align: center;
+            width: 100%;
+            height: 40vh;
+            padding: 40px 10px;
+        }
+        #s{
+            text-align: center;
+        }
+        .primary{
+            height: auto;
+            display: block;
+        }
+        .see{
+            text-align: center;
+        }
+        .home{
+            height: auto;
+            display: block;
+        }
+        #t{
+            text-align: center;
+            width: 100%;
+            height: 70vh;
+            padding: 40px 10px;
+        }
+        .s{
+            width: 470px;
+        }
+        .head{
+            width: 100%;
+        }
+        .tartib{
+            height: auto;
+            display: block;
+        }
+        .bigdiv{
+            height: auto;
+            display: block;
+        }
+        .css{
+            width: 100%;
+            height: 50vh;
+            display: block;
+        }
+        .small{
+            height: auto;
+            display: block;
+        }
+        .bottom{
+            width: 100%;
+            height: 23vh;
+            display: block;
+            padding: 10px 80px;
+        }
+        .call{
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .footer{
+            width: 100%;
+            height: 70vh;
+            display: block;
+        }
+        .foot{
+            width: 100%;
+        }
+        .foot input{
+            width: 100%;
+        }
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="col">
+                <h3>Active.</h3>
+            </div>
+            <div class="col">
+                <ul>
+                    <li style="color: green;">Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Portfolio</li>
+                    <li>Team</li>
+                    <li>Blog</li>
+                    <select name="id" id="">
+                        <option value="">Dropdown</option>
+                        <option value="">Dropdown1</option>
+                        <option value="">Dropdown2</option>
+                        <option value="">Dropdown3</option>
+                        <option value="">Dropdown4</option>
+                        <option value="">Dropdown5</option>
+                    </select>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+        <div class="box">
+            <div class="row" id="rw">
+                <p>Welcome</p>
+                <h3>Excepteur sint occaecat cupidatat non proident</h3>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p><br>
+                <button>Get Started</button>
+            </div>
+            <div class="row">
+                <img style="width: 100%;" src="https://bootstrapmade.com/content/demo/Active/assets/img/img_h_6.jpg" alt="">
+            </div>
+        </div>
+        <div class="bigger">
+            <div class="card" id="st">
+                <h4>Our Mission</h4><br>
+                <h1>The Big Oxmox advised her not to do so, because there were thousands.</h1><br>
+                <h3>A small river named Duden flows by their place <br> and supplies it with the necessary regelialia. It <br> is a paradisematic country.</h3><br>
+                <p>The Big Oxmox advised her not to do so, because <br> there were thousands of bad Commas, wild Question <br> Marks and devious Semikoli.</p><br>
+                <button>Get Started</button>
+            </div>
+            <div class="card">
+                <img style="width: 100%; height: 67vh; padding: 50px 16px 0px 10px;" src="https://bootstrapmade.com/content/demo/Active/assets/img/img_v_3.jpg" alt="">
+            </div>
+        </div><br><br><br><br>
+        <div class="katta">
+            <div class="bir">
+                <h2>Technology</h2>
+                <p>Separated they live in Bookmarksgrove <br> right at the coast</p>
+            </div>
+            <div class="bir">
+                <h2>Web Design</h2>
+                <p>Separated they live in Bookmarksgrove <br> right at the coast</p>
+            </div>
+            <div class="bir">
+                <h2>Branding</h2>
+                <p>Separated they live in Bookmarksgrove <br> right at the coast</p>
+            </div>
+        </div>
+        <div class="asos">
+            <div class="ikki" style="width: 100%;">
+                <img style="width: 100%;" src="https://bootstrapmade.com/content/demo/Active/assets/img/img_v_1.jpg" alt="">
+            </div>
+            <div class="ikki" id="ts">
+                <h4>Why Us</h4>
+                <h2>Far far away Behind the Word <br> Mountains</h2><br>
+                <h3>Far far away, behind the word mountains, far <br> from the countries Vokalia and Consonantia.</h3><br>
+                <p>There live the blind texts. Separated they live in <br> Bookmarksgrove right at the coast of the Semantics, <br> a large language ocean.</p>
+                <div class="uch" style="display: flex; padding: 50px 0px;">
+                    <h1 id="s">3919</h1>
+                    <h1 id="s">2831</h1>
+                    <h1 id="s">1914</h1>
+                </div>
+                <div class="besh" style="display: flex; gap: 105px;">
+                    <p>Coffee</p>
+                    <p>Codes</p>
+                    <p>Projects</p>
+                </div>
+            </div>
+        </div><br><br><br>
+            <h3 style="text-align: center;">Recent Posts</h3>
+            <h1 style="text-align: center;">Blog Posts</h1>
+            <br><br><br><br>
+        <div class="primary">
+            <div class="see">
+                <img src="https://bootstrapmade.com/content/demo/Active/assets/img/img_h_4.jpg" alt=""><br><br>
+                <p>DEVELOPMENT.July 20,2020</p><br><br>
+                <h2>There live the blind texts they live</h2>
+                <p>Far far away, behind the word mountains, far from <br> the countries Vokalia and Consonantia, there live <br> the blind texts.</p><br>
+                <img style="width: 70px; border-radius: 50px;" src="https://bootstrapmade.com/content/demo/Active/assets/img/team/team-3.jpg" alt="">
+                <p>Winston Gold <br> Lead Product Designer</p>
+            </div>&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="see">
+                <img src="https://bootstrapmade.com/content/demo/Active/assets/img/img_h_2.jpg" alt=""><br><br>
+                <p>DEVELOPMENT.July 20,2020</p><br><br>
+                <h2>There live the blind texts they live</h2>
+                <p>Far far away, behind the word mountains, far from <br> the countries Vokalia and Consonantia, there live <br> the blind texts.</p><br>
+                <img style="width: 70px; border-radius: 50px;" src="https://bootstrapmade.com/content/demo/Active/assets/img/team/team-2.jpg" alt="">
+                <p>Winston Gold <br> Lead Product Designer</p>
+            </div>&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="see">
+                <img src="https://bootstrapmade.com/content/demo/Active/assets/img/img_h_3.jpg" alt=""><br><br>
+                <p>DEVELOPMENT.July 20,2020</p><br><br>
+                <h2>There live the blind texts they live</h2>
+                <p>Far far away, behind the word mountains, far from <br> the countries Vokalia and Consonantia, there live <br> the blind texts.</p><br>
+                <img style="width: 70px; border-radius: 50px;" src="https://bootstrapmade.com/content/demo/Active/assets/img/team/team-1.jpg" alt="">
+                <p>Winston Gold <br> Lead Product Designer</p>
+            </div>
+        </div><br><br>
+        <div class="home">
+            <div class="head" style="width: 50%;" id="t">
+                <div class="s" style="padding: 20px 0px;">
+                    <h2>Modern and clean Design</h2><br>
+                    <p>Far far away, behind the word mountaines, far from the countriew.</p>
+                </div><br><br>
+                <div class="s" style="padding: 20px 0px;">
+                    <h2>Sell Product</h2><br>
+                    <p>Far far away, behind the word mountaines, far from the countriew.</p>
+                </div><br><br>
+                <div class="s" style="padding: 20px 0px;">
+                    <h2>Succes Every Day</h2><br>
+                    <p>Far far away, behind the word mountaines, far from the countriew.</p>
+                </div><br><br>
+                <div class="s" style="padding: 20px 0px;">
+                    <h2>Bring Ideas to Life</h2><br>
+                    <p>Far far away, behind the word mountaines, far from the countriew.</p>
+                </div>
+            </div>
+            <div class="head">
+                <img style="width: 100%; height: 90vh;" src="https://bootstrapmade.com/content/demo/Active/assets/img/img_h_3.jpg" alt="">
+            </div>
+        </div>
+        <div class="tartib">
+            <div class="dell" id="A">
+                <h4>Our Services</h4><br>
+                <h1>Far far away, behind the word mountains, <br> far from the countries Vokalia</h1><br>
+                <h3>Far far away, behind the word mountains, far from <br> the countries Vokalia and Consonantia, there live <br> the blind texts.</h3><br>
+                <p>Separated they live in Bookmarksgrove right at the coast <br> of the Semantics, a large language ocean.</p><br><br>
+                <button>Get Started</button>
+            </div>
+            <div class="dell">
+                <img style="width: 100px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/980px-Magnifying_glass_icon.svg.png" alt=""> 
+                <h3>Square</h3><br>
+                <p>Separated they live in Bookmarksgrove <br> right at the coast</p>               
+                <img style="width: 100px;" src="https://console.rpa-russia.ru/uploads/Globe_icon_svg_111d911a8f.png" alt="">
+                <h3>Blueprint</h3><br>
+                <p>Separated they live in Bookmarksgrove <br> right at the coast</p>
+            </div>
+        </div><br><br><br><br>
+        <div class="sss" style="text-align: center;">
+            <h3>Plans</h3>
+            <h1>Pricing Table</h1>
+        </div><br>
+        <div class="bigdiv">
+            <div class="css" style="width: 100%; text-align: center; padding: 60px 0px;">
+                <h3>Free</h3><br>
+                <h1 style="color: green;">$0/month</h1><br>
+                <p>Aida dere</p><br>
+                <p>Nec feugiat nisl</p><br>
+                <p>Nulla at volutpat dola</p><br>
+                <p style="color: gray;">Pharetra massa</p><br>
+                <p style="color: gray;">Massa ultricies mi</p><br><br><br>
+                <button style="width: 120px; padding: 10px; border: 1px solid green; border-radius: 20px; color: green;">Buy Now</button>
+            </div>
+            <div class="css" style="width: 100%; text-align: center;"><br>
+                <button style="width: 130px; border: none; border-radius: 12px; padding: 3px; color: green; background-color: rgba(217, 216, 216, 0.638);">Recommended</button><br><br>
+                <h3>Business</h3><br>
+                <h1 style="color: green;">$19/month</h1><br>
+                <p>Aida dere</p><br>
+                <p>Nec feugiat nisl</p><br>
+                <p>Nulla at volutpat dola</p><br>
+                <p>Pharetra massa</p><br>
+                <p style="color: gray;">Massa ultricies mi</p><br><br><br>
+                <button style="width: 120px; padding: 10px; border: 1px solid green; border-radius: 20px; color: white; background-color: green;">Buy Now</button>
+            </div>
+            <div class="css" style="width: 100%; text-align: center; padding: 60px 0px;">
+                <h3>Developer</h3><br>
+                <h1 style="color: green;">$29/month</h1><br>
+                <p>Aida dere</p><br>
+                <p>Nec feugiat nisl</p><br>
+                <p>Nulla at volutpat dola</p><br>
+                <p>Pharetra massa</p><br>
+                <p>Massa ultricies mi</p><br><br><br>
+                <button style="width: 120px; padding: 10px; border: 1px solid green; border-radius: 20px; color: green;">Buy Now</button>
+            </div>
+        </div>
+        <div class="small">
+            <div class="bottom">
+                <h3>Plans</h3><br>
+                <h1>Frequently Asked Questions</h1><br><br>
+                <p>How to download and register?</p><br>
+                <p>How to create you paypal account?</p><br>
+                <p>How to link your paypal and bank account?</p><br>
+            </div>
+        </div><br><br><br><br>
+        <div class="call" style="text-align: center;">
+            <p>Happy Customers</p><br> 
+            <h2>Testimonials</h2><br><br>
+            <img style="width: 60px; border-radius: 30px;" src="https://bootstrapmade.com/content/demo/Active/assets/img/testimonials/testimonials-2.jpg" alt="">
+            <h3>Lukas Devlin</h3><br>
+            <p>“There live the blind texts. Separated they live in Bookmarksgrove right <br> at the coast of the Semantics, a large language ocean.”</p>
+        </div><br><br><br><br>
+        <div class="footer" style="border: 1px solid black;">
+            <div class="foot">
+                <h2>About Us</h2><br>
+                <p>There live the blind texts. Separated they live in <br> Bookmarksgrove right at the coast of the <br> Semantics, a large language ocean.</p><br><br>
+                <button style="width: 100px; padding: 8px; border-radius: 20px; border: none; background-color: green; color: white;" >Learn more</button>
+            </div>
+            <div class="foot">
+                <h2>Navigation</h2><br>
+                <p>Overview</p>
+                <p>About Us</p>
+                <p>Find Buyres</p>
+                <p>Services</p>
+            </div>
+            <div class="foot">
+                <h2>Recent Posts</h2><br>
+                <h5>May 3, 2020</h5>
+                <p>There live the Blind Texts</p>
+                <h5>May 3, 2020</h5>
+                <p>Separated they live in Bookmarksgrove right</p>
+            </div>
+            <div class="foot">
+                <h2>Connect</h2><br>
+                <i class="fa-brands fa-facebook"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fa-brands fa-linkedin"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fa-brands fa-google"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fa-brands fa-google-play"></i><br><br>
+                <h2>Subscribe</h2><br>
+                <input style="width: 170px;
+                padding: 8px;" type="text" placeholder="Enter Your email">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
