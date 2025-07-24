@@ -1,2 +1,2 @@
 # sayt
-sayt haqida
+bu kod saytlar haqida
