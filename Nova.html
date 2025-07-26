@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    .container{
+        width: 100%;
+        height: 100vh;
+    }
+    .box{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        background-image: url(./photo_2025-06-27_11-08-40.jpg);
+        background-size: contain;
+        background-position: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    .col{
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(26, 26, 59, 0.37);
+        padding: 30px 200px 0px 0px;
+        color: white;
+    }
+    #col{
+        background-color: rgb(26, 26, 59);
+        padding: 20px 200px;
+    }
+    ul{
+        display: flex;
+        list-style: none;
+        justify-content: space-evenly;
+    }
+    #co p{
+        border: 3px solid blue;
+        border-top: none;
+        border-right: none;
+        border-bottom: none;
+        padding: 10px;
+    }
+    select{
+        font-size: 17px;
+        border: none;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+    }
+    #co h2{
+        display: none;
+    }
+    #co p{
+        display: none;
+    }
+    #co button{
+        display: none;
+    }
+    #col{
+        display: block;
+    }
+    
+    #co h2{
+        padding: 20px 20px;
+        font-size: 35px;
+    }
+    #co p{
+        padding: 20px 20px;
+    }
+    #co button{
+        padding: 20px 20px;
+    }
+    .big{
+        width: 100%;
+        height: 73vh;
+        display: flex;
+    }
+    .row{
+        width: 100%;
+        height: 73vh;
+    }
+    #rw{
+        width: 100%;
+        padding: 150px 100px;
+    }
+    .katta{
+        width: 100%;
+        height: 50vh;
+        display: flex;
+    }
+    .del{
+        width: 100%;
+        height: 50vh;
+        padding: 20px 50px;
+    }
+    .asos{
+        width: 100%;
+        height: 40vh;
+        background-image: url(https://bootstrapmade.com/content/demo/Nova/assets/img/cta-bg.jpg);
+        background-position: center;
+    }
+    .ts{
+        width: 100%;
+        height: 40vh;
+        text-align: center;
+        color: white;
+        padding: 50px 0px;
+    }
+    .ts button{
+        width: 250px;
+        padding: 20px;
+        border: none;
+        border-radius: 30px;
+        background-color: rgb(11, 190, 230);
+        color: white;
+        font-size: 20px;
+    }
+    .primary{
+        width: 100%;
+        height: 120vh;
+    }
+    .st{
+        width: 100%;
+        height: 40vh;
+        padding: 10px 200px;
+    }
+    .st img{
+        width: 400px;
+        position: relative;
+        top: -300px;
+        left: 800px;
+    }
+    #bir{
+        height: 40vh;
+        padding: 80px 200px;
+    }
+    .asosiy{
+        width: 100%;
+        height: 70vh;
+        display: flex;
+    }
+    .win{
+        width: 100%;
+        height: 70vh;
+        margin: 5px;
+    }
+    .footer{
+        width: 100%;
+        height: 35vh;
+        display: flex;
+        background-color: rgb(117, 209, 255);
+    }
+    .foot{
+        width: 100%;
+        height: 35vh;
+    }
+    @media screen and(max-width:1700px) {
+        .col{
+            padding: 20px 100px;
+        }
+    }
+    @media screen and (max-width:1645px) {
+        .col{
+            padding: 20px 50px;
+        }
+        li{
+            font-size: 18px;
+        }
+        .box{
+            background-size: cover;
+            
+        }
+        .col h2{
+            display: none;
+        }
+        .col p{
+            display: none;
+        }
+        .col button{
+            display: none;
+        }
+        #col{
+            display: none;
+        }
+        #co h2{
+            display: block;
+        }
+        #co p{
+            display: block;
+        }
+        #co button{
+            display: block;
+        }
+        #co{
+            padding: 20px 200px;
+            background-color: rgba(26, 26, 59, 0.503);
+        }
+    }
+    @media screen and (max-width:1352px) {
+        ul{
+            display: block;
+            text-align: center;
+        }
+        li{
+            margin: 5px;
+        }
+        .box{
+            background-position: center;
+        }
+        .big{
+            display: block;
+            height: 100vh;
+        }
+        .row{
+            height:50vh;
+        }
+        .katta{
+            height: 150vh;
+            display: block;
+        }
+        .del{
+            padding: 0px 100px;
+        }
+        .as{
+            width: 100%;
+            text-align: center;
+        }
+        .ts{
+            padding: 90px 100px;
+        }
+        .primary{
+            height: 100vh;
+            display: block;
+        }
+        .asosiy{
+            height: 220vh;
+            display: block;
+
+        }
+        .win{
+            width: 100%;
+            height: 50vh;
+            text-align: center;
+        }
+        .footer{
+            height: 140vh;
+            display: block;
+            text-align: center;
+        }
+    }
+    
+</style>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="col" id="col">
+                <h1>Nova</h1>
+                <br><br><br><br><br><br><br><br><br>
+                <h2>Focus On What <br> Matters</h2><br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima iste sint, quaerat nisi magni ut quidem eaque, eveniet at asperiores qui optio.</p><br>
+                <button style="width: 100px; border: none; border-radius: 20px; padding: 8px; background-color: green; color: white;">Get Started</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button style="width: 100px; border: none; border-radius: 20px; padding: 8px; background-color: rgba(255, 255, 255, 0); color: white;">Watch Video</button>
+            </div>
+            <div class="col" id="co">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Portfolio</li>
+                    <li>Team</li>
+                    <li>Blog</li>
+                    <select name="id" id="">
+                        <option value="">Dropdown</option>
+                        <option value="">Dropdown1</option>
+                        <option value="">Dropdown2</option>
+                        <option value="">Dropdown3</option>
+                        <option value="">Dropdown4</option>
+                        <option value="">Dropdown5</option>
+                    </select>
+                    <li>Contact</li>
+                </ul>
+                <br><br><br><br>
+                <h2>Focus On What <br> Matters</h2><br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima iste sint, quaerat nisi magni ut quidem eaque, eveniet at asperiores qui optio.</p><br>
+                <button style="width: 100px; border: none; border-radius: 20px; padding: 8px; background-color: green; color: white;">Get Started</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button style="width: 100px; border: none; border-radius: 20px; padding: 8px; background-color: rgba(255, 255, 255, 0); color: white;">Watch Video</button>
+            </div>
+        </div><br><br><br>
+        <div class="big">
+            <div class="row" id="row">
+                <img style="width: 100%; padding: 0px 100px;" src="https://bootstrapmade.com/content/demo/Nova/assets/img/why-us-bg.jpg" alt="">
+            </div>
+            <div class="row" id="rw">
+                <h1>Let's grow your business together</h1><br>
+                <h2>Optio reiciends accusantium iusto architecto at quia <br> minima maiores quidem, dolorum</h2><br>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br> Facilis numquam ex, quaerat quae illo aperiam <br> libero corrupti excepturi nihil, recusandae <br> repellendus ipsum. Aspernatur, ullam nulla! Distinctio, <br> accusamus error. Quis facilis beatae enim nulla sint <br>quas repellendus nisi sunt ut unde.</p>
+            </div>
+        </div><br><br><br>
+        <div class="as" style="text-align: center;"><br>
+            <h1 style="border: 1px solid blue; border-top: none; border-right: none; border-left: none;">Our Services</h1><br>
+            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+
+        </div>
+        <div class="katta">
+            <div class="del"><br><br>
+                <h1>Lorem Ipsum</h1><br>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing <br> elit. Explicabo pariatur a, porro unde <br> autem harum?</p><br>
+                <h4>Learn more</h4><br><br>
+                <h1>Magni Dolores</h1><br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Earum repudiandae nemo dolore nostrum vero animi facere <br> perferendis a?</p><br>
+                <h4>Learn more</h4>
+            </div>
+            <div class="del"><br><br>
+                <h1>Dolor Sitema</h1><br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing <br> elit. Sit quia sint blanditiis repellat tempora <br> placeat doloribus earum?</p><br>
+                <h4>Learn more</h4><br><br>
+                <h1>Nemo Enim</h1><br>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing <br> elit. Sunt quod iusto autem eum exercitationem  <br> quibusdam omnis?</p><br>
+                <h4>Learn more</h4>
+            </div>
+            <div class="del"><br><br>
+                <h1>Sed ut perspiciats</h1><br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Iste explicabo odio minus tempora facilis <br> corrupti illum!</p><br>
+                <h4>Learn more</h4><br><br>
+                <h1>Eiusmod Tempor</h1><br>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br> Voluptatum molestiae dolorem, perspiciatis quia fugit similique <br> facere quam?</p><br>
+                <h4>Learn more</h4>
+            </div>
+        </div><br><br><br><br><br><br>
+        <div class="asos">
+            <div class="ts">
+                <h1>Call To Action</h1><br>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <br> culpa qui officia deserunt mollit anim id est laborum.</p><br><br>
+                <button>Call To Action</button>
+            </div>
+        </div><br><br><br>
+        <div class="primary">
+            <div class="st"><br><br><br>
+                <h1>Powerful Features for <br> Your Business</h1><br>
+                <p>Easy Cart Features <br><br>
+                   Sit amet consectetur adipisicing <br><br>
+                   Ipsum Rerum Explicabo <br><br>
+                   Easy Cart Features <br><br>
+                </p>
+                
+            </div><br><br><br><br><br><br><br><br><br><br><br>
+            <div class="st" style="background-color: rgb(230, 230, 230);" id="bir">
+                <h1>Labore Sdio Lidui <br> Bonde Naruto</h1><br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam nostrum molestias <br> doloremque quae delectus odit minima corrupti blanditiis quo animi!</p><br>
+                <button style="width: 150px; background-color: rgb(86, 200, 238); border: none; padding: 15px; border-radius: 25px; color: white; font-size: 18px;">Get Started</button>
+            </div>
+        </div><br><br><br><br>
+        <div class="asosiy">
+            <div class="win">
+                <img style="width: 350px;" src="https://bootstrapmade.com/content/demo/Nova/assets/img/blog/blog-1.jpg" alt=""><br>
+                <p>Tue, December 12 / Julia Parker </p><br>
+                <h2>Eum ad dolor et. Autem aut <br> fugiat debitis</h2><br>
+                <p>Lorem ipsum, dolor sit amet consectetur <br> adipisicing elit. Totam quod facilis repellat <br> natus explicabo libero dignissimos, voluptate <br> fugit omnis accusamus!</p>
+            </div><br>
+            <div class="win">
+                <img style="width: 350px;" src="https://bootstrapmade.com/content/demo/Nova/assets/img/blog/blog-recent-3.jpg" alt=""><br>
+                <p>Tue, December 12 / Julia Parker </p><br>
+                <h2>Eum ad dolor et. Autem aut <br> fugiat debitis</h2><br>
+                <p>Lorem ipsum, dolor sit amet consectetur <br> adipisicing elit. Totam quod facilis repellat <br> natus explicabo libero dignissimos, voluptate <br> fugit omnis accusamus!</p>
+            </div><br>
+            <div class="win">
+                <img style="width: 350px;" src="https://bootstrapmade.com/content/demo/Nova/assets/img/blog/blog-recent-5.jpg" alt=""><br>
+                <p>Tue, December 12 / Julia Parker </p><br>
+                <h2>Eum ad dolor et. Autem aut <br> fugiat debitis</h2><br>
+                <p>Lorem ipsum, dolor sit amet consectetur <br> adipisicing elit. Totam quod facilis repellat <br> natus explicabo libero dignissimos, voluptate <br> fugit omnis accusamus!</p>
+            </div><br>
+            <div class="win">
+                <img style="width: 350px;" src="https://bootstrapmade.com/content/demo/Nova/assets/img/blog/blog-recent-2.jpg" alt=""><br>
+                <p>Tue, December 12 / Julia Parker </p><br>
+                <h2>Eum ad dolor et. Autem aut <br> fugiat debitis</h2><br>
+                <p>Lorem ipsum, dolor sit amet consectetur <br> adipisicing elit. Totam quod facilis repellat <br> natus explicabo libero dignissimos, voluptate <br> fugit omnis accusamus!</p>
+            </div><br>
+        </div>
+        <div class="footer">
+            <div class="foot"><br><br>
+                <h1>Nova</h1><br>
+                <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget <br> nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p><br>
+                <i class="fa-brands fa-facebook"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fa-brands fa-linkedin"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+            <div class="foot"><br><br>
+                <h2>Useful Links</h2><br>
+                <p>Home <br><br>
+                   About us <br><br>
+                   Services <br><br>
+                   Terms of service <br><br>
+                   Privacy policy <br><br>
+                </p>
+            </div>
+            <div class="foot"><br><br>
+                <h2>Our Services</h2><br><br>
+                <p>Web Design <br><br>
+                   Web Development <br><br>
+                   Product Management <br><br>
+                   Marketing <br><br>
+                   Graphic Design <br><br>
+                </p>
+            </div>
+            <div class="foot"><br><br>
+                <h2>Contact Us</h2><br>
+                <p> A108 Adam Street <br>
+                    New York, NY 535022 <br>
+                    United States <br><br>
+                    Phone: +1 5589 55488 55 <br>
+                    Email: info@example.com 
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
