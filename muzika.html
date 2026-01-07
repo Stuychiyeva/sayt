@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        height: 100vh;
+        background-image: url(https://img.freepik.com/premium-photo/flat-lay-creative-frame-tropical-nature-leaves-monstera-rustic-wood-grunge-background-with_512343-362.jpg);
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        background-size: cover;
+        color: white;
+        text-align: center;
+        font-family: sans-serif;
+    }
+    .telefon{
+        width: 360px;
+        height: 650px;
+        background: rgb(79, 78, 78);
+        border: 5px solid rgb(76, 76, 76);
+        border-radius: 40px;
+        position: relative;
+        top: 30px;
+        left: 600px;
+        overflow: hidden;
+        background-image: url(https://i.pinimg.com/236x/66/45/55/6645556b3de3cb80b5193ea51d352a61.jpg);
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        background-size: cover;
+    }
+    .camera{
+      width: 110px;
+      height: 25px;
+      background: rgb(17, 17, 17);
+      border-radius: 20px;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+    .home{
+      position: absolute;
+      inset: 0;
+      background: url('https://i.pinimg.com/736x/94/28/1f/94281f453e74a571d93a3eaf1fa9ebd5.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 150px 0;
+    }
+    .app{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .app-icon{
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      background: white;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+     .app-icon:hover {
+      transform: scale(1.2);
+    }
+    .ilova-label {
+      text-align: center;
+      font-size: 15px;
+      color: white;
+      margin-top: 5px;
+      text-shadow: 0 0 10px black;
+    }
+    .ilova{
+      width: 100%;
+      position: absolute;
+      background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAbhVwtNIawntAq1P19kfM5Y5D-ghGx3rSVw&s);
+      background-repeat: no-repeat;
+      background-position: 100% 100%;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding-top: 60px;
+      box-sizing: border-box;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1s ease;
+    }
+    .ilova.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 25px;
+      background: rgba(58, 57, 57, 0.221);
+      border: none;
+      color: white;
+      border-radius: 100px;
+      width: 35px;
+      height: 35px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    h1{
+        font-size: 50px;
+        margin-top: 40px;
+        color: rgb(143, 133, 133);
+    }
+    #searchInput{
+        width: 60%;
+        padding: 5px;
+        font-size: 15px;
+        border: none;
+        margin-top: 15px;
+    }
+    button{
+        padding: 5px 12px;
+        font-size: 15px;
+        font-family: sans-serif;
+        background-color: rgb(64, 15, 9);
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    #result {
+      margin-top: 15px;
+      overflow-y: auto;
+      height: 270px;
+      padding: 0 10px;
+    }
+
+    .song {
+      background: rgba(255,255,255,0.1);
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 12px;
+    }
+
+    .song img {
+      width: 80px;
+      border-radius: 10px;
+    }
+
+    .song h3 {
+      margin: 5px 0;
+      font-size: 15px;
+    }
+
+    .song p {
+      margin: 0;
+      font-size: 13px;
+      color: rgb(244, 237, 237);
+    }
+
+    .song audio {
+      margin-top: 5px;
+      width: 100%;
+    }
+
+    .link a {
+      color: lightblue;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .link a:hover {
+      text-decoration: underline;
+    }
+</style>
+<body>
+  <div class="telefon">
+    <div class="camera"></div>
+
+    <div class="home" id="homeScreen">
+      <div class="app">
+        <div class="app-icon" onclick="openApp()">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Yandex_Music_icon.svg/1200px-Yandex_Music_icon.svg.png" alt="Yandex Music">
+        </div>
+        <p class="ilova-label">Yandex Music</p>
+      </div>
+    </div>
+
+  <div class="ilova" id="appPage">
+      <button class="back-btn" onclick="closeApp()">x</button>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Yandex_Music_icon.svg/1200px-Yandex_Music_icon.svg.png" alt="Music" class="logo">   
+    <h1>Qo'shiq qidiruvi</h1>
+    <div class="div">
+        <input type="search" id="searchInput" placeholder="Qoshiq nomini kiriting">
+        <button onclick="searchSong()">Qidirish</button>
+    </div>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function openApp() {
+      document.getElementById('appPage').classList.add('active');
+      document.getElementById('homeScreen').style.opacity = '0';
+    }
+
+    function closeApp() {
+      document.getElementById('appPage').classList.remove('active');
+      document.getElementById('homeScreen').style.opacity = '1';
+    }
+    async function searchSong() {
+      const query = document.getElementById('searchInput').value.trim();
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = "<p>Yuklanmoqda...</p>";
+
+      if (!query) {
+        resultDiv.innerHTML = "<p>Iltimos, qoshiq yoki artist nomini yozing.</p>";
+        return;
+      }
+
+      try {
+        const response = await fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(query)}&media=music&limit=6`);
+        const data = await response.json();
+
+        if (!data.results.length) {
+          resultDiv.innerHTML = "<p>Qoshiq topilmadi.</p>";
+          return;
+        }
+
+        resultDiv.innerHTML = data.results.map(song => `
+          <div class="song">
+            <img src="${song.artworkUrl100}" alt="Album rasmi">
+            <h3>${song.trackName || "Noma'lum qo'shiq"}</h3>
+            <p>${song.artistName || "Noma'lum artist"}</p>
+            ${song.previewUrl 
+              ? `<audio controls src="${song.previewUrl}"></audio>` 
+              : `<p>Audio namunasi mavjud emas</p>`}
+            <p class="link"><a href="${song.trackViewUrl}" target="_blank">iTunesda tinglash</a></p>
+          </div>
+        `).join('');
+      } catch (error) {
+        resultDiv.innerHTML = "<p>Xatolik yuz berdi: " + error + "</p>";
+      }
+    }
+  </script>
+</body>
+</html>
