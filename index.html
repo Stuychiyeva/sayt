@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta name="google-site-verification" content="86bhIxbYAdlAE1QjLby5b84hiWakkOiZQiihPdTWZ4M" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sarvara Tuychiyeva - 15 yoshli Full-Stack dasturchi portfoliosi. IT loyihalar va musiqiy ilovalar.">
+    
+    <title>Sarvara Tuychiyeva | Full-Stack Developer</title>
+    <meta name="description" content="15 yoshli Full-Stack dasturchi Sarvara Tuychiyevaning portfoliosi. IT loyihalar va musiqiy ilovalar.">
     <meta name="keywords" content="Sarvara Tuychiyeva, dasturchi, portfolio, web developer, Uzbekistan">
-    <title>Sarvara Tuychiyeva | Portfolio</title>
+    <meta name="author" content="Sarvara Tuychiyeva">
+    <meta property="og:title" content="Sarvara | Full-Stack Developer Portfolio">
+    <meta property="og:image" content="photo_2026-01-07_16-42-41.jpg">
+    
+    <meta name="google-site-verification" content="Sizning_GSC_Kodingiz" />
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -20,97 +26,61 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        
-        body { background-color: var(--bg-dark); color: var(--primary-color); scroll-behavior: smooth; }
+        body { background-color: var(--bg-dark); color: var(--primary-color); scroll-behavior: smooth; overflow-x: hidden; }
+
+        /* Animatsiya uchun klass */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         /* Navigatsiya */
         nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 10%;
-            position: sticky;
-            top: 0;
-            background-color: var(--nav-bg);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid #1a1a3a;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 10%; position: sticky; top: 0;
+            background-color: var(--nav-bg); backdrop-filter: blur(10px);
+            z-index: 1000; border-bottom: 1px solid #1a1a3a;
         }
-        .logo { font-size: 20px; font-weight: 900; letter-spacing: -1px; color: var(--primary-color); }
-        .nav-links a { color: var(--secondary-color); text-decoration: none; margin-left: 30px; font-size: 15px; font-weight: 500; transition: 0.3s; }
+        .logo { font-size: 20px; font-weight: 900; letter-spacing: -1px; }
+        .nav-links a { color: var(--secondary-color); text-decoration: none; margin-left: 30px; font-size: 15px; transition: 0.3s; }
         .nav-links a:hover { color: var(--accent-color); }
 
         /* Hero Section */
-        .hero {
-            padding: 100px 10%;
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        .hero-content { flex: 1; }
-        .hero-content h1 { font-size: 80px; font-weight: 900; line-height: 0.9; letter-spacing: -3px; margin-bottom: 20px; }
-        .hero-content p { font-size: 20px; color: var(--secondary-color); margin-bottom: 40px; max-width: 500px; }
-
-        /* Rasm qismi */
-        .hero-image { flex: 1; position: relative; }
-        .hero-image img { 
-            width: 100%; 
-            border-radius: 20px; 
-            transition: 0.5s;
-            border: 1px solid #1a1a3a;
-        }
+        .hero { padding: 100px 10%; display: flex; align-items: center; gap: 50px; }
+        .hero-content h1 { font-size: 80px; font-weight: 900; line-height: 0.9; margin-bottom: 20px; }
+        .hero-image img { width: 100%; border-radius: 20px; border: 1px solid #1a1a3a; transition: 0.5s; }
         .hero-image img:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,112,243,0.2); }
 
-        /* Tugmalar */
-        .cta-button {
-            display: inline-block;
-            background: var(--accent-color);
-            color: #fff;
-            padding: 18px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-        .cta-button:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(0,112,243,0.3); }
-
-        /* Loyihalar qismi */
-        .projects { padding: 80px 10%; background-color: var(--bg-dark); }
-        .section-title { font-size: 40px; font-weight: 900; margin-bottom: 40px; text-align: left; }
+        /* Loyihalar */
+        .projects { padding: 80px 10%; }
         .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
-        .project-card { background-color: #0f0b2e; padding: 40px; border: 1px solid #1a1a3a; border-radius: 15px; transition: 0.3s; }
-        .project-card:hover { border-color: var(--accent-color); transform: translateY(-5px); }
-        .project-card h3 { font-size: 24px; margin-bottom: 10px; }
-        .project-card span { font-size: 14px; color: var(--accent-color); font-weight: 700; text-transform: uppercase; }
+        .project-card { background: #0f0b2e; padding: 40px; border: 1px solid #1a1a3a; border-radius: 15px; transition: 0.3s; }
+        .project-card:hover { border-color: var(--accent-color); }
 
-        /* Maxsus Cardlar */
-        .bot-card { border-left: 5px solid var(--tg-blue) !important; }
-        .music-card { border-left: 5px solid var(--music-pink) !important; }
-        .bot-link { color: var(--tg-blue); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px; transition: 0.3s; }
-        .music-link { color: var(--music-pink); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px; transition: 0.3s; }
-
-        /* Aloqa bo'limi */
-        .contact-section { padding: 100px 10%; background-color: #0a0722; text-align: center; }
-        .social-links { display: flex; justify-content: center; gap: 30px; margin-top: 40px; }
-        .social-item {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 700;
-            padding: 15px 30px;
-            border: 1px solid #1a1a3a;
-            border-radius: 12px;
-            transition: 0.3s;
+        /* Aloqa formasi */
+        .contact-form {
+            max-width: 600px; margin: 40px auto; background: #0f0b2e; padding: 30px;
+            border-radius: 15px; border: 1px solid #1a1a3a;
         }
-        .social-item.tg:hover { background: var(--tg-blue); border-color: var(--tg-blue); }
-        .social-item.ig:hover { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border-color: transparent; }
+        .contact-form input, .contact-form textarea {
+            width: 100%; padding: 15px; margin-bottom: 15px;
+            background: #08051b; border: 1px solid #1a1a3a;
+            color: white; border-radius: 8px;
+        }
+        .submit-btn {
+            background: var(--accent-color); color: white; border: none;
+            padding: 15px 30px; border-radius: 50px; cursor: pointer; font-weight: bold; width: 100%;
+        }
 
         @media (max-width: 768px) {
-            .hero { flex-direction: column-reverse; text-align: center; padding: 50px 5%; }
+            .hero { flex-direction: column-reverse; text-align: center; }
             .hero-content h1 { font-size: 50px; }
             .project-grid { grid-template-columns: 1fr; }
-            .social-links { flex-direction: column; }
         }
     </style>
 </head>
@@ -119,77 +89,77 @@
     <nav>
         <div class="logo">PORTFOLIO.</div>
         <div class="nav-links">
-            <a href="#about">Men haqimda</a>
+            <a href="#about">Haqida</a>
             <a href="#projects">Loyihalar</a>
-            <a href="#music">Musiqa</a>
             <a href="#contact">Aloqa</a>
         </div>
     </nav>
 
-    <section class="hero" id="about">
+    <section class="hero reveal" id="about">
         <div class="hero-content">
             <h1>WEB<br>DEVELOPER</h1>
             <p>Salom, men Sarvara. 15 yoshli Full-Stack dasturchiman. "IT SCHOOL" sertifikatiga ega mutaxassisman.</p>
-            <a href="#contact" class="cta-button">Bog'lanish →</a>
+            <a href="#contact" style="background: var(--accent-color); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; display: inline-block;">Bog'lanish →</a>
         </div>
         <div class="hero-image">
-            <img src="photo_2026-01-07_16-42-41.jpg" alt="Sarvara Certificate">
+            <img src="photo_2026-01-07_16-42-41.jpg" alt="Sarvara Portfolio">
         </div>
     </section>
 
-    <section class="projects" id="projects">
-        <h2 class="section-title">Saralangan ishlar</h2>
+    <section class="projects reveal" id="projects">
+        <h2 style="margin-bottom: 30px;">Saralangan ishlar</h2>
         <div class="project-grid">
             <div class="project-card">
-                <span>Backend / PHP</span>
+                <span style="color: var(--accent-color);">Backend / PHP</span>
                 <h3>Avtomatlashtirilgan tizim</h3>
                 <p>Ma'lumotlar bazasi bilan ishlovchi dinamik veb-ilova.</p>
             </div>
-            <div class="project-card bot-card">
+            <div class="project-card" style="border-left: 5px solid var(--tg-blue);">
                 <span style="color: var(--tg-blue);">Telegram API</span>
                 <h3>Ona tili Test Bot</h3>
-                <p>@onatilitestquizbot - Interaktiv test va quiz tizimi.</p>
-                <a href="https://t.me/onatilitestquizbot" target="_blank" class="bot-link">Botni ko'rish →</a>
+                <a href="https://t.me/onatilitestquizbot" target="_blank" style="color: var(--tg-blue); text-decoration: none; display: block; margin-top: 10px;">Botga o'tish →</a>
             </div>
-        </div>
-    </section>
-
-    <section class="projects" id="music" style="padding-top: 0;">
-        <h2 class="section-title">Frontend Loyihalar</h2>
-        <div class="project-grid">
-            <div class="project-card music-card">
-                <span style="color: var(--music-pink);">API Integration</span>
+            <div class="project-card" style="border-left: 5px solid var(--music-pink);">
+                <span style="color: var(--music-pink);">Frontend / API</span>
                 <h3>Yandex Music Clone</h3>
-                <p>iTunes API orqali qo'shiq qidirish va tinglash imkonini beruvchi "Musiqa qidiruvi" loyihasi.</p>
-                <a href="music.html" target="_blank" class="music-link">Saytga o'tish →</a>
-            </div>
-            <div class="project-card">
-                <span>UI Design</span>
-                <h3>Modern Dashboard</h3>
-                <p>Foydalanuvchilar uchun qulay interfeys dizayni.</p>
+                <p>Musiqa qidirish va tinglash ilovasi.</p>
+                <a href="music.html" target="_blank" style="color: var(--music-pink); text-decoration: none; display: block; margin-top: 10px;">Saytga o'tish →</a>
             </div>
         </div>
     </section>
 
-    <section class="contact-section" id="contact">
-        <h2 class="section-title" style="text-align: center;">Muloqot uchun</h2>
-        <div class="social-links">
-            <a href="https://t.me/jasurbekovna010" target="_blank" class="social-item tg">Telegram</a>
-            <a href="https://www.instagram.com/14_o9_.pg" target="_blank" class="social-item ig">Instagram</a>
+    <section class="projects reveal" id="contact">
+        <h2 style="text-align: center;">Men bilan bog'laning</h2>
+        <div class="contact-form">
+            <form action="https://formspree.io/f/Sizning_Pochtangiz" method="POST">
+                <input type="text" name="name" placeholder="Ismingiz" required>
+                <input type="email" name="email" placeholder="Elektron pochtangiz" required>
+                <textarea name="message" rows="5" placeholder="Xabaringizni yozing..." required></textarea>
+                <button type="submit" class="submit-btn">Xabarni yuborish</button>
+            </form>
         </div>
     </section>
 
     <footer style="padding: 50px; text-align: center; color: var(--secondary-color); font-size: 14px;">
-        &copy; 2026 Sarvara Tuychiyeva. Barcha huquqlar himoyalangan.
+        &copy; 2026 Sarvara Tuychiyeva.
     </footer>
 
+    <script>
+        // Animatsiya skripti
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Birinchi yuklanganda ishlashi uchun
+    </script>
+
 </body>
-
 </html>
-
-
-
-
-
-
-
