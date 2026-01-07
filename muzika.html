@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musiqa Qidiruv</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100vh;
+        background-image: url(https://img.freepik.com/premium-photo/flat-lay-creative-frame-tropical-nature-leaves-monstera-rustic-wood-grunge-background-with_512343-362.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: white;
+        text-align: center;
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Telefon korpusi */
+    .telefon {
+        width: 360px;
+        height: 650px;
+        background: rgb(79, 78, 78);
+        border: 5px solid rgb(76, 76, 76);
+        border-radius: 40px;
+        position: relative;
+        overflow: hidden;
+        background-image: url(https://i.pinimg.com/236x/66/45/55/6645556b3de3cb80b5193ea51d352a61.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    /* MEDIA SCREEN - Telefonlar uchun moslashtirish */
+    @media screen and (max-width: 480px) {
+        body {
+            background-image: none; /* Telefonda ortiqcha yuk bo'lmasligi uchun */
+            background-color: #08051b;
+        }
+        .telefon {
+            width: 100%; /* Telefon ekranini to'liq egallaydi */
+            height: 100vh;
+            border: none;
+            border-radius: 0;
+        }
+    }
+
+    .camera {
+      width: 110px;
+      height: 25px;
+      background: rgb(17, 17, 17);
+      border-radius: 20px;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+
+    .home {
+      position: absolute;
+      inset: 0;
+      background: url('https://i.pinimg.com/736x/94/28/1f/94281f453e74a571d93a3eaf1fa9ebd5.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding-bottom: 80px;
+      transition: opacity 0.5s ease;
+    }
+
+    .app {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .app-icon {
+      width: 65px;
+      height: 65px;
+      border-radius: 15px;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .app-icon img {
+        width: 80%;
+    }
+
+    .app-icon:hover { transform: scale(1.1); }
+
+    .ilova {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAbhVwtNIawntAq1P19kfM5Y5D-ghGx3rSVw&s);
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding-top: 60px;
+      box-sizing: border-box;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+      z-index: 5;
+    }
+
+    .ilova.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+    }
+
+    h1 { font-size: 24px; margin-top: 20px; color: #fff; }
+
+    #searchInput {
+        width: 70%;
+        padding: 10px;
+        border-radius: 20px 0 0 20px;
+        border: none;
+        outline: none;
+    }
+
+    .search-box {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .search-box button {
+        padding: 10px 15px;
+        border-radius: 0 20px 20px 0;
+        border: none;
+        background: #ff4500;
+        color: white;
+        cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      overflow-y: auto;
+      height: 400px;
+      padding: 0 15px;
+    }
+
+    .song {
+      background: rgba(255,255,255,0.1);
+      margin-bottom: 15px;
+      padding: 15px;
+      border-radius: 15px;
+      text-align: left;
+    }
+
+    .song img { width: 60px; border-radius: 8px; float: left; margin-right: 15px; }
+    .song h3 { font-size: 14px; margin: 0; }
+    .song p { font-size: 12px; margin: 5px 0; color: #ccc; }
+    .song audio { width: 100%; height: 30px; margin-top: 10px; }
+    .clear { clear: both; }
+
+</style>
+<body>
+
+  <div class="telefon">
+    <div class="camera"></div>
+
+    <div class="home" id="homeScreen">
+      <div class="app" onclick="openApp()">
+        <div class="app-icon">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Yandex_Music_icon.svg/1200px-Yandex_Music_icon.svg.png" alt="Yandex Music">
+        </div>
+        <p class="ilova-label">Musiqa</p>
+      </div>
+    </div>
+
+    <div class="ilova" id="appPage">
+      <button class="back-btn" onclick="closeApp()">←</button>
+      <h1>Musiqa Izlash</h1>
+      <div class="search-box">
+          <input type="search" id="searchInput" placeholder="Qo'shiq nomi...">
+          <button onclick="searchSong()">🔍</button>
+      </div>
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <script>
+    function openApp() {
+      document.getElementById('appPage').classList.add('active');
+      document.getElementById('homeScreen').style.opacity = '0';
+    }
+
+    function closeApp() {
+      document.getElementById('appPage').classList.remove('active');
+      document.getElementById('homeScreen').style.opacity = '1';
+    }
+
+    async function searchSong() {
+      const query = document.getElementById('searchInput').value.trim();
+      const resultDiv = document.getElementById('result');
+      
+      if (!query) return;
+
+      resultDiv.innerHTML = "<p>Qidirilmoqda...</p>";
+
+      try {
+        const response = await fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(query)}&media=music&limit=10`);
+        const data = await response.json();
+
+        if (data.results.length === 0) {
+          resultDiv.innerHTML = "<p>Hech narsa topilmadi.</p>";
+          return;
+        }
+
+        resultDiv.innerHTML = data.results.map(song => `
+          <div class="song">
+            <img src="${song.artworkUrl100}" alt="cover">
+            <h3>${song.trackName}</h3>
+            <p>${song.artistName}</p>
+            <div class="clear"></div>
+            <audio controls src="${song.previewUrl}"></audio>
+          </div>
+        `).join('');
+      } catch (error) {
+        resultDiv.innerHTML = "<p>Xatolik yuz berdi.</p>";
+      }
+    }
+  </script>
+</body>
+</html>
